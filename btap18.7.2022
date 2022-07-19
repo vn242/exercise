@@ -1,0 +1,7 @@
+
+giamtrugiacanh = 11000000
+phuthuoc = 4400000
+thunhap = input("Nhập thu nhập hàng tháng: ")
+songuoiphuthuc = input("Số người phụ thuộc là: ")
+result = int(thunhap) - int(giamtrugiacanh) - int(phuthuoc)*int(songuoiphuthuc)
+print("Thu nhập tính thuế của người đó là:",result)
