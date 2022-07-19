@@ -1,0 +1,53 @@
+import turtle
+xa = input("Nhập hoành độ của điểm a: ")
+ya = input("Nhập tung độ của điểm a: ")
+xb = input("Nhập hoành độ của điểm b: ")
+yb = input("Nhập tung độ của điểm b: ")
+xc = input("Nhập hoành độ của điểm c: ")
+yc = input("Nhập tung độ của điểm c: ")
+xd = int(xc) - (int(xb) - int(xa))
+yd = int(yc) - (int(yb) - int(ya))
+print("Tọa độ của điểm d là:" + "(" + str(xd) + ", " + str(yd) +")")
+
+t = turtle.Turtle()
+t.shape('circle')
+t.penup()
+t.goto(int(xa), int(ya))
+t.pendown()
+t.fillcolor('green')
+t.begin_fill()
+t.circle(5)
+t.end_fill()
+t.penup()
+t.goto(int(xb), int(yb))
+t.pendown()
+t.fillcolor('green')
+t.begin_fill()
+t.circle(5)
+t.end_fill()
+t.penup()
+t.goto(int(xc), int(yc))
+t.pendown()
+t.fillcolor('green')
+t.begin_fill()
+t.circle(5)
+t.end_fill()
+t.penup()
+t.goto(int(xd), int(yd))
+t.pendown()
+t.fillcolor('blue')
+t.begin_fill()
+t.circle(5)
+t.end_fill()
+t.hideturtle()
+
+
+
+turtle.done()
+
+
+
+
+
+
+
