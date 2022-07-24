@@ -1,0 +1,54 @@
+import math
+xa = float(input("Nhập hoành độ điểm a:"))
+ya = float(input("Nhập tung độ điểm a:"))
+xb = float(input("Nhập hoành độ điểm b:"))
+yb = float(input("Nhập tung độ điểm b:"))
+xc = float(input("Nhập hoành độ điểm c:"))
+yc = float(input("Nhập tung độ điểm c:"))
+a1 = float((ya-yb)/(xa-xb))
+b1 = float(ya-xa*a1)
+if(yc - a1*xc-b1 == 0):print("Đây không phải là 1 tam giác !!!")
+else:
+    a = math.sqrt((xc-xb)**2 + (yc-yb)**2)
+    b = math.sqrt((xc-xa)**2 + (yc-ya)**2)
+    c = math.sqrt((xb-xa)**2 + (yb-ya)**2)
+    p = (a+b+c)/2
+    ha = 2*(math.sqrt(p*(p-a)*(p-b)*(p-c))/a)
+    hb = 2*(math.sqrt(p*(p-a)*(p-b)*(p-c))/b)
+    hc = 2*(math.sqrt(p*(p-a)*(p-b)*(p-c))/c)
+    print('Độ dài đường cao hạ từ đỉnh A là: {0}'.format(ha))
+    print('Độ dài đường cao hạ từ đỉnh B là: {0}'.format(hb))
+    print('Độ dài đường cao hạ từ đỉnh C là: {0}'.format(hc))
+    ma = math.sqrt(((b**2 + c**2)/2) - (a**2)/4)
+    mb = math.sqrt(((a**2 + c**2)/2) - (b**2)/4)
+    mc = math.sqrt(((b**2 + a**2)/2) - (c**2)/4)
+    print('Độ dài đường trung tuyến hạ từ đỉnh A là: {0}'.format(ma))
+    print('Độ dài đường trung tuyến hạ từ đỉnh B là: {0}'.format(mb))
+    print('Độ dài đường trung tuyến hạ từ đỉnh C là: {0}'.format(mc))
+    xg = (xa+xb+xc)/3
+    yg = (ya+yb+yc)/3
+    print('Hoành độ trọng tâm tam giác ABC là:{0}'.format(xg))
+    print('Tung độ trọng tâm tam giác ABC là:{0}'.format(yg))
+    xbc = xc-xb
+    ybc = yc-yb
+    xac = xc-xa
+    yac = yc-ya
+    p1 = xa*xbc + ybc*ya
+    p2 = xac*xb + yac*yb
+    yh = (p1*xac-p2*xbc)/(ybc*xac-yac*xbc)
+    xh = (p1-ybc*yh)/xbc
+    print('Hoành độ trực tâm tam giác ABC là:{0}'.format(xh))
+    print('Tung độ trực tâm tam giác ABC là:{0}'.format(yh))
+    import turtle
+    t = turtle.Turtle()
+    t.shape('turtle')
+    t.pencolor('green')
+    t.penup()
+    t.goto(xa, ya)
+    t.pendown()
+    t.goto(xb, yb)
+    t.goto(xc, yc)
+    t.goto(xa, ya)
+    turtle.done()
+
+
