@@ -1,0 +1,88 @@
+
+import turtle
+
+xa = float(input("Nhập hoành độ của điểm a: "))
+ya = float(input("Nhập tung độ của điểm a: "))
+xb = float(input("Nhập hoành độ của điểm b: "))
+yb = float(input("Nhập tung độ của điểm b: "))
+xc = float(input("Nhập hoành độ của điểm c: "))
+yc = float(input("Nhập tung độ của điểm c: "))
+xd = float(input("Nhập hoành độ của điểm d: "))
+yd = float(input("Nhập tung độ của điểm d: "))
+a1 = float((ya-yb)/(xa-xb))  #ab
+b1 = float(ya-xa*a1)
+a2 = float((ya-yd)/(xa-xd))  #ad
+b2 = float(ya-xa*a2)
+a3 = float((ya-yc)/(xa-xc))  #ac
+b3 = float(ya-xa*a2)
+a4 = float((yb-yd)/(xb-xd))  #bd
+b4 = float(yb-xb*a2)
+a5 = float((yb-yc)/(xb-xc))  #bc
+b5 = float(yb-xb*a2)
+a6 = float((yd-yc)/(xd-xc))  #cd
+b6 = float(yd-xd*a2)
+if((a1*xc-yc+b1)*(a1*xd-yd+b1)>0):
+    
+        if((a2*xc-yc+b2)*(a2*xb-yb+b2)>0):
+            k=1
+            if((a6*xa-ya+b6)*(a6*xb-yb+b6)>0 and (a5*xa-ya+b5)*(a5*xd-yd+b5)>0):
+                print("Đây là tứ giác lồi!!!")
+            else:
+                print("Đây là tứ giác lõm !!!")
+
+        else: 
+            k=2
+            if((a4*xa-ya+b4)*(a4*xc-yc+b4)>0 and (a6*xa-ya+b6)*(a6*xb-yb+b6)>0 and (a3*xb-yb+b3)*(a3*xd-yd+b3)>0):
+                print("Đây là tứ giác lồi!!!")
+            else:
+                print("Đây là tứ giác lõm !!!")
+    
+else: 
+    k=3
+    if((a4*xa-ya+b4)*(a4*xc-yc+b4)>0 and (a2*xc-yc+b2)*(a2*xb-yb+b2)>0 and (a3*xb-yb+b3)*(a3*xd-yd+b3)>0 and (a5*xa-ya+b5)*(a5*xd-yd+b5)>0):
+                print("Đây là tứ giác lồi!!!")
+    else:
+                print("Đây là tứ giác lõm !!!")
+
+t = turtle.Turtle()
+t.shape('turtle')
+if(k==1):
+    t.fillcolor('green')
+    t.begin_fill()
+    t.penup()
+    t.goto(xa, ya)
+    t.pendown()
+    t.goto(xb, yb)
+    t.goto(xc, yc)
+    t.goto(xd, yd)
+    t.goto(xa, ya)
+    t.end_fill()
+    t.hideturtle()
+    turtle.done()
+elif(k==2):
+    t.fillcolor('green')
+    t.begin_fill()
+    t.penup()
+    t.goto(xa, ya)
+    t.pendown()
+    t.goto(xb, yb)
+    t.goto(xd, yd)
+    t.goto(xc, yc)
+    t.goto(xa, ya)
+    t.end_fill()
+    t.hideturtle()
+    turtle.done()
+elif(k==3):
+    t.fillcolor('green')
+    t.begin_fill()
+    t.penup()
+    t.goto(xa, ya)
+    t.pendown()
+    t.goto(xc, yc)
+    t.goto(xb, yb)
+    t.goto(xd, yd)
+    t.goto(xa, ya)
+    t.end_fill()
+    t.hideturtle()
+    turtle.done()
+
