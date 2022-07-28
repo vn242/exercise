@@ -1,0 +1,8 @@
+
+my_text = input("Nhập tên: ")
+my_text = my_text.lstrip().rstrip()
+words = my_text.split()
+for i in range (0, len(words)):
+    words[i] = words[i].capitalize()
+str = ' '
+print(str.join(words))
