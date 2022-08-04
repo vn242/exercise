@@ -1,0 +1,15 @@
+import math as t
+a = float(-1)
+b = float(1)
+c = float((a+b)/2)
+
+
+while t.e**c + t.sin(c) > 0.001:
+    if (t.e**c + t.sin(c))*(t.e**a + t.sin(a)) < 0:
+        b = c
+    else: a = c
+    c = (a+b)/2
+print("Nghiệm của phương trình là {0}".format(c))
+
+
+
